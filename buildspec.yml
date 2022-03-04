@@ -10,7 +10,7 @@ phases:
       - npm run build
   post_build:
     commands:
-      - aws s3 rm s3://codebuild-spa-bucket/codebuild-spa/ --recursive
+      - aws s3 rm s3://codebuild-spa-bucket --recursive
 artifacts:
   files:
     - '**/*'
