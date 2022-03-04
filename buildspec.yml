@@ -3,13 +3,14 @@ version: 0.2
 phases:
   install:
     commands:
+      - cd app
       - npm install
   build:
     commands:
       - npm run build
   post_build:
     commands:
-      - aws s3 rm s3://www.engineer-ninaritai.com1 --recursive
+      - aws s3 rm s3://codebuild-spa-bucket/codebuild-spa/ --recursive
 artifacts:
   files:
     - '**/*'
